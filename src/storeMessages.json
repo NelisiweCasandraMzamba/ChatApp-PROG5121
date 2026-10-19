@@ -1,0 +1,19 @@
+[
+{
+    "name": "cassa"
+},
+  {
+    "messageID": "2455481918",
+    "messageNumber": 1,
+    "recipient": "+27788232275",
+    "messageText": "Hello, how are you?",
+    "messageHash": "24:1:HELLO,YOU?"
+  },
+  {
+    "messageID": "3370202470",
+    "messageNumber": 0,
+    "recipient": "+27718693002",
+    "messageText": "Hi Mike, can you join us for dinner tonight?",
+    "messageHash": "33:0:HITONIGHT?"
+  }
+]
