@@ -15,5 +15,49 @@
     "recipient": "+27718693002",
     "messageText": "Hi Mike, can you join us for dinner tonight?",
     "messageHash": "33:0:HITONIGHT?"
+  },
+  {
+    "messageID": "3503056626",
+    "messageNumber": 1,
+    "recipient": "+27788232275",
+    "messageText": "Don't forget my birthday",
+    "messageHash": "35:1:DONTBIRTHDAY"
+  },
+  {
+    "messageID": "1206536381",
+    "messageNumber": 1,
+    "recipient": "+27718693002",
+    "messageText": "Hi how are you",
+    "messageHash": "12:1:HIYOU"
+  },
+  {
+    "messageID": "1004301716",
+    "messageNumber": 1,
+    "recipient": "+27788232275",
+    "messageText": "Are you free for supper or dinner",
+    "messageHash": "10:1:AREDINNER"
+  },
+  {
+    "messageID": "9287971548",
+    "messageNumber": 1,
+    "recipient": "+27788232275",
+    "messageText": "Are you free on sunday for church",
+    "messageHash": "92:1:ARECHURCH"
+  },
+  {
+    "messageID": "4179663978",
+    "messageNumber": 0,
+    "recipient": "+27718693002",
+    "sender": "",
+    "messageText": "Hi Mike, can you join us for dinner tonight?",
+    "messageHash": "41:0:HITONIGHT"
+  },
+  {
+    "messageID": "3687421636",
+    "messageNumber": 1,
+    "recipient": "+27718693002",
+    "sender": "+27693660985",
+    "messageText": "What theme is the birthday party?",
+    "messageHash": "36:1:WHATPARTY"
   }
 ]
