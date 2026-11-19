@@ -207,7 +207,7 @@ public class Registration {
     public static void storedMessagesMenu(Scanner input, MessageStorage manager){ 
      boolean inMenu = true; //Controls the menu loop and it remains true while the user is in the menu.
      
-     //Added while loop so the menu keeps running until user chooses 0
+     //The while loop so the menu keeps running until user chooses 0
      //Displays the Stored Messages Menu options to the user.
      while(inMenu) {
         System.out.println("\n--- Stored Messages Menu ---");
