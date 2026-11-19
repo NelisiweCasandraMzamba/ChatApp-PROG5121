@@ -13,13 +13,19 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class MessageStorageTest {
 
-    //Helper method to set the private 'flag' variable using reflection
+    // The method is used to set the value of a private flag field in a Message object using reflection
     private void setPrivateFlag(Message msg, String flagValue) {
         try {
+             //Gets access to the private field named "flag" from the Message class
             java.lang.reflect.Field field = Message.class.getDeclaredField("flag");
+            
+            //Accesses the private field
             field.setAccessible(true);
+            
+            //Sets the value of the flag field for the specified Message object
             field.set(msg, flagValue);
         } catch (Exception e) {
+            //Displays an error message if the field cannot be accessed or updated
             System.out.println("Error setting flag: " + e.getMessage());
         }
     }
@@ -27,29 +33,22 @@ public class MessageStorageTest {
     private MessageStorage loadTestData() {
         MessageStorage manager = new MessageStorage();
 
-        // Test Data Message 1
         Message msg1 = new Message(1, "+27834557896", "Did you get the cake?");
         setPrivateFlag(msg1, "Sent"); 
         manager.addMessage(msg1);
 
-        // Test Data Message 2
         Message msg2 = new Message(2, "+27838884567", "Where are you? You are late! I have asked you to be on time.");
         setPrivateFlag(msg2, "Stored"); 
         manager.addMessage(msg2);
 
-        // Test Data Message 3
         Message msg3 = new Message(3, "+27834484567", "Yohoooo, I am at your gate.", "3456789012");
         setPrivateFlag(msg3, "Disregarded"); 
         manager.addMessage(msg3);
 
-        // Test Data Message 4
-        // FIXED: Using the 5-arg constructor to force the messageID to be "0838884567" 
-        // so the search test can successfully find it.
         Message msg4 = new Message(4, "0838884567", "It is dinner time !", "0838884567", "0838884567");
         setPrivateFlag(msg4, "Sent"); 
         manager.addMessage(msg4);
 
-        // Test Data Message 5
         Message msg5 = new Message(5, "+27838884567", "Ok, I am leaving without you.");
         setPrivateFlag(msg5, "Stored"); 
         manager.addMessage(msg5);
@@ -77,7 +76,6 @@ public class MessageStorageTest {
     public void testSearchForMessageID() {
         MessageStorage manager = loadTestData();
         
-        // Adds message 4 to the stored messages array so it can be searched
         manager.storedMessages.add(manager.sentMessages.get(1)); 
         
         String expected = "Recipient: 0838884567\nMessage: It is dinner time !";
@@ -97,8 +95,7 @@ public class MessageStorageTest {
         MessageStorage manager = loadTestData();
       
         String hashToDelete = manager.storedMessages.get(0).getMessageHash();
-        
-        // Note: I kept the exact message text from the object (with the ! and .)
+
         String expected = "Message: \"Where are you? You are late! I have asked you to be on time.\" successfully deleted.";
         assertEquals(expected, manager.deleteMessageByHash(hashToDelete));
         
@@ -120,3 +117,4 @@ public class MessageStorageTest {
     //
     // @Test
     // public void hello() {}
+
